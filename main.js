@@ -12,7 +12,27 @@ document.querySelectorAll('#opciones > .opcion') .forEach((opcion) => {
 });
 });
     
-select.addEventListener('click', () => {
+    select.addEventListener('click', () => {
     select.classList.toggle('active');
     opciones.classList.toggle('active');
+});
+
+const select1 = document.querySelector('#select1');
+const opciones1 = document.querySelector('#opciones1');
+const contenidoSelect1 = document.querySelector('#select1 .contenido-select');
+const hiddenInput1 = document.querySelector('#inputSelect1');
+
+document.querySelectorAll('#opciones1 > .opcion').forEach((opcion) => {
+    opcion.addEventListener('click', (e) => {
+    e.preventDefault();
+    contenidoSelect1.innerHTML = e.currentTarget.innerHTML;
+    select1.classList.toggle('active')
+    opciones1.classList.toggle('active')
+    hiddenInput1.value = e.currentTarget.querySelector('.titulo').innerText;
+});
+});
+
+    select1.addEventListener('click', () => {
+    select1.classList.toggle('active');
+    opciones1.classList.toggle('active');
 });
