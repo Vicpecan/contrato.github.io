@@ -98,7 +98,7 @@
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
                 <div class="opciones" id="opciones">
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(20.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/ahorrar-dinero.png" alt="">
                             <div class="textos">
@@ -107,7 +107,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(25.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/ahorrar-dinero.png" alt="">
                             <div class="textos">
@@ -116,7 +116,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(29.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/telefono.png" alt="">
                             <div class="textos">
@@ -125,7 +125,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(29.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/telefono.png" alt="">
                             <div class="textos">
@@ -134,7 +134,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(39.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/telefono.png" alt="">
                             <div class="textos">
@@ -143,7 +143,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(49.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/bolsa-de-dinero.png" alt="">
                             <div class="textos">
@@ -152,7 +152,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(55.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/bolsa-de-dinero.png" alt="">
                             <div class="textos">
@@ -161,7 +161,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(59.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/bolsa-de-dinero.png" alt="">
                             <div class="textos">
@@ -170,7 +170,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(74.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/bolsa-de-dinero.png" alt="">
                             <div class="textos">
@@ -179,7 +179,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(89.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/alrededor-del-mundo.png" alt="">
                             <div class="textos">
@@ -188,7 +188,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarPlan(99.9)">
                         <div class="contenido-opcion">
                             <img src="imagenes/alrededor-del-mundo.png" alt="">
                             <div class="textos">
@@ -200,11 +200,7 @@
                 </div>
             </div>
             <input type="hidden" name="planes" id="inputSelect" value="">
-        </form>
-    </div>
 
-    <div class="contenedor">
-        <form action="">
             <div class="selectbox">
                 <div class="select" id="select1">
                     <div class="contenido-select">
@@ -214,7 +210,7 @@
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
                 <div class="opciones" id="opciones1">
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarCiclo(1)">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -223,7 +219,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarCiclo(3)">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -232,7 +228,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarCiclo(4)">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -241,7 +237,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion">
+                    <a href="#" class="opcion" onclick="MarcarCiclo(5)">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -253,10 +249,50 @@
                 </div>
             </div>
             <input type="hidden" name="ciclos" id="inputSelect1" value="">
+
+            <div class="selectbox" onclick="CalcularProrrateo()">
+                <div class="select" style="justify-content: center;">
+                    <div class="contenido-select">
+                        <h1 class="titulo">Calcular Prorrateo</h1>
+                    </div>
+                </div>
+            </div>
+
         </form>
+
     </div>
+
+
+
 
     <script src="main.js"></script>
 
 </body>
 </html>
+
+<script type="text/javascript">
+
+    function MarcarPlan(valor) {
+        plan = valor;
+    }
+
+    function MarcarCiclo(valor) {
+        ciclo = valor;
+    }
+
+    function CalcularProrrateo() {
+
+        if (plan == 0) {
+            alert("Seleccione un plan");
+            return;
+        }
+
+        if (ciclo == 0) {
+            alert("Seleccione un ciclo");
+            return;
+        }
+
+        alert("Plan " + plan + ", Ciclo " + ciclo);
+    }
+
+</script>

@@ -3,6 +3,9 @@ const opciones = document.querySelector('#opciones');
 const contenidoSelect = document.querySelector('#select .contenido-select');
 const hiddenInput = document.querySelector('#inputSelect');
 
+var plan = 0;
+var ciclo = 0;
+
 document.querySelectorAll('#opciones > .opcion') .forEach((opcion) => {
     opcion.addEventListener('click' , (e) => {e.preventDefault();
     contenidoSelect.innerHTML = e.currentTarget.innerHTML;
@@ -12,7 +15,7 @@ document.querySelectorAll('#opciones > .opcion') .forEach((opcion) => {
 });
 });
     
-    select.addEventListener('click', () => {
+select.addEventListener('click', () => {
     select.classList.toggle('active');
     opciones.classList.toggle('active');
 });
@@ -24,15 +27,15 @@ const hiddenInput1 = document.querySelector('#inputSelect1');
 
 document.querySelectorAll('#opciones1 > .opcion').forEach((opcion) => {
     opcion.addEventListener('click', (e) => {
-    e.preventDefault();
-    contenidoSelect1.innerHTML = e.currentTarget.innerHTML;
-    select1.classList.toggle('active')
-    opciones1.classList.toggle('active')
-    hiddenInput1.value = e.currentTarget.querySelector('.titulo').innerText;
-});
+        e.preventDefault();
+        contenidoSelect1.innerHTML = e.currentTarget.innerHTML;
+        select1.classList.toggle('active')
+        opciones1.classList.toggle('active')
+        hiddenInput1.value = e.currentTarget.querySelector('.titulo').innerText;
+    });
 });
 
-    select1.addEventListener('click', () => {
+select1.addEventListener('click', () => {
     select1.classList.toggle('active');
     opciones1.classList.toggle('active');
 });
