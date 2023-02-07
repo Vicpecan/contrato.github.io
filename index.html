@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9a7d9d8b0e.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -98,7 +100,7 @@
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
                 <div class="opciones" id="opciones">
-                    <a href="#" class="opcion" onclick="MarcarPlan(20.9)">
+                    <a href="#" class="opcion" onclick="setPlanValue(20.90)">
                         <div class="contenido-opcion">
                             <img src="imagenes/ahorrar-dinero.png" alt="">
                             <div class="textos">
@@ -107,7 +109,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarPlan(25.9)">
+                    <a href="#" class="opcion" onclick="setPlanValue(25.90)">
                         <div class="contenido-opcion">
                             <img src="imagenes/ahorrar-dinero.png" alt="">
                             <div class="textos">
@@ -116,7 +118,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarPlan(29.9)">
+                    <a href="#" class="opcion" onclick="setPlanValue(29.90)">
                         <div class="contenido-opcion">
                             <img src="imagenes/telefono.png" alt="">
                             <div class="textos">
@@ -125,16 +127,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarPlan(29.9)">
-                        <div class="contenido-opcion">
-                            <img src="imagenes/telefono.png" alt="">
-                            <div class="textos">
-                                <h2 class="titulo">Entel Chip+ 29.90</h2>
-                                <p class="descripcion">Llamadas Ilimitadas + 500 SMS + Doble GB x 3 Meses</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#" class="opcion" onclick="MarcarPlan(39.9)">
+                    <a href="#" class="opcion" onclick="setPlanValue(39.90)">
                         <div class="contenido-opcion">
                             <img src="imagenes/telefono.png" alt="">
                             <div class="textos">
@@ -143,7 +136,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarPlan(49.9)">
+                    <a href="#" class="opcion" onclick="setPlanValue(49.90)">
                         <div class="contenido-opcion">
                             <img src="imagenes/bolsa-de-dinero.png" alt="">
                             <div class="textos">
@@ -152,7 +145,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarPlan(55.9)">
+                    <a href="#" class="opcion" onclick="setPlanValue(55.90)">
                         <div class="contenido-opcion">
                             <img src="imagenes/bolsa-de-dinero.png" alt="">
                             <div class="textos">
@@ -161,7 +154,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarPlan(59.9)">
+                    <a href="#" class="opcion" onclick="setPlanValue(59.90)">
                         <div class="contenido-opcion">
                             <img src="imagenes/bolsa-de-dinero.png" alt="">
                             <div class="textos">
@@ -170,7 +163,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarPlan(74.9)">
+                    <a href="#" class="opcion" onclick="setPlanValue(74.90)">
                         <div class="contenido-opcion">
                             <img src="imagenes/bolsa-de-dinero.png" alt="">
                             <div class="textos">
@@ -179,7 +172,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarPlan(89.9)">
+                    <a href="#" class="opcion" onclick="setPlanValue(89.90)">
                         <div class="contenido-opcion">
                             <img src="imagenes/alrededor-del-mundo.png" alt="">
                             <div class="textos">
@@ -188,7 +181,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarPlan(99.9)">
+                    <a href="#" class="opcion" onclick="setPlanValue(99.90)">
                         <div class="contenido-opcion">
                             <img src="imagenes/alrededor-del-mundo.png" alt="">
                             <div class="textos">
@@ -210,7 +203,7 @@
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
                 <div class="opciones" id="opciones1">
-                    <a href="#" class="opcion" onclick="MarcarCiclo(1)">
+                    <a href="#" class="opcion" onclick="setCicloValue('2023-03-01')">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -219,7 +212,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarCiclo(3)">
+                    <a href="#" class="opcion" onclick="setCicloValue('2023-02-16')">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -228,7 +221,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarCiclo(4)">
+                    <a href="#" class="opcion" onclick="setCicloValue('2023-02-09')">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -237,7 +230,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="MarcarCiclo(5)">
+                    <a href="#" class="opcion" onclick="setCicloValue('2023-02-23')">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -261,38 +254,52 @@
         </form>
 
     </div>
-
-
-
+  
 
     <script src="main.js"></script>
-
+    
 </body>
 </html>
 
 <script type="text/javascript">
 
-    function MarcarPlan(valor) {
-        plan = valor;
+    let PlanValue;
+    let CicloValue;
+
+    function setPlanValue(value) {
+        PlanValue = value;
     }
 
-    function MarcarCiclo(valor) {
-        ciclo = valor;
+    function setCicloValue(value) {
+        CicloValue = value;
     }
 
     function CalcularProrrateo() {
+    PlanValue = parseFloat(PlanValue);
+    CicloValue = new Date(CicloValue);
+    var currentDate = new Date();
 
-        if (plan == 0) {
-            alert("Seleccione un plan");
-            return;
-        }
-
-        if (ciclo == 0) {
-            alert("Seleccione un ciclo");
-            return;
-        }
-
-        alert("Plan " + plan + ", Ciclo " + ciclo);
+    if (!PlanValue || !CicloValue) {
+    swal("Por favor proporciona valores válidos para Plan y Ciclo");
+    return;
     }
+    
+    var differenceInMilliseconds = CicloValue.getTime() - currentDate.getTime() + (24 * 60 * 60 * 1000);
+    var differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
+    var daysInCurrentMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
 
+    var result = (PlanValue * differenceInDays) / daysInCurrentMonth;
+    result = Math.round(result * 100) / 100;
+
+    var finalResult = PlanValue + result;
+    finalResult = Math.round(finalResult * 100) / 100;
+
+    swal({
+        
+        title:'El saldo del prorrateo es: ' + result,
+        text: 'El total a pagar el primer mes es: ' + finalResult,
+        icon: 'success'
+    });
+    }
+    
 </script>
