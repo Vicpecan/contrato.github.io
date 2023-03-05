@@ -203,7 +203,7 @@
                     <i class="fa-solid fa-angle-down"></i>
                 </div>
                 <div class="opciones" id="opciones1">
-                    <a href="#" class="opcion" onclick="setCicloValue('2023-03-01')">
+                    <a href="#" class="opcion" onclick="setCicloValue('2023-04-01')">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -212,7 +212,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="setCicloValue('2023-02-16')">
+                    <a href="#" class="opcion" onclick="setCicloValue('2023-03-16')">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -221,7 +221,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="setCicloValue('2023-02-09')">
+                    <a href="#" class="opcion" onclick="setCicloValue('2023-03-09')">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -230,7 +230,7 @@
                             </div>
                         </div>
                     </a>
-                    <a href="#" class="opcion" onclick="setCicloValue('2023-02-23')">
+                    <a href="#" class="opcion" onclick="setCicloValue('2023-03-23')">
                         <div class="contenido-opcion">
                             <img src="imagenes/calendario.png" alt="">
                             <div class="textos">
@@ -284,7 +284,7 @@
     }
     
     var differenceInMilliseconds = CicloValue.getTime() - currentDate.getTime() + (24 * 60 * 60 * 1000);
-    var differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24)) + 1;
+    var differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
     var daysInCurrentMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
 
     var result = (PlanValue * differenceInDays) / daysInCurrentMonth;
