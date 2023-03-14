@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9a7d9d8b0e.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript" src="prorrateo.js"></script>
 
 </head>
 <body>
@@ -67,18 +68,18 @@
         <table>
             <tr>
                 <td rowspan="3" class="celdaTitulo1"><h2 class="tituloIzquierda">3. Filtros</h2></td>
-                <td><h2 class="negro">Si tiene deuda antigua o castigada con Entel</h2><h2 class="rojo">deberás informar que realice su pago, caso contrario es cuando el cliente tiene deuda vencida y su servicio activo, en este caso podrás ingresar el pedido.</h2></td>
+                <td><span class="negro">Si tiene deuda antigua o castigada con Entel</span><span class="rojo">deberás informar que realice su pago, caso contrario es cuando el cliente tiene deuda vencida y su servicio activo, en este caso podrás ingresar el pedido.</span></td>
                 <td>Sr./Srta XXX, le comento que para poder ingresar su solicitud de migración a postpago primero deberá pagar su deuda. Recuerde realizar el pago con el número de recibo XXX [indicar número], recuerda no incluir el guion, además puedes realizar el pago desde el app/web de los bancos  BCP, IBK y BBVA, así como en los agentes Kasnet, Cell Power y Wester Union. </td>
             </tr>
             <td class="celdaClasi"><p class="negroCentrado">No califica</p></td>
             <td>
                 Gracias por su espera. He revisado el resultado de la evaluación; y por el momento no está calificando para para migrar a un servicio Postpago. Sin embargo, su evaluación crediticia podría estar cambiando en un periodo aproximado de 30 días.
-                <h2 class="negro">[Si tiene un plan prepago power, indicar]</h2> Asimismo le podría informar que por el momento podría acceder a un plan flexible que le brinda 4GB, SMS y minutos ilimitados a cualquier operador, WhatsApp, Facebook Messenger, Instagram Fotos y Facebook full por 30 días haciendo recargas desde S/20 a más, asimismo sus recargas le brindan un super bono adicional con Juegos Ilimitados como FreeFire, FreeFire Max, Booyah y Speed Drifters por 30 días por todo un año.
+                <span class="negro">[Si tiene un plan prepago power, indicar]</span> Asimismo le podría informar que por el momento podría acceder a un plan flexible que le brinda 4GB, SMS y minutos ilimitados a cualquier operador, WhatsApp, Facebook Messenger, Instagram Fotos y Facebook full por 30 días haciendo recargas desde S/20 a más, asimismo sus recargas le brindan un super bono adicional con Juegos Ilimitados como FreeFire, FreeFire Max, Booyah y Speed Drifters por 30 días por todo un año.
             </td>
             <tr>
                 <td class="celdaClasi"><p class="negroCentrado">Califica</p></td>
                 <td>
-                    <p class="recuerda">
+                    <p class="azul">
                         "[continuar con ofrecimiento]
                         Si cliente tiene ofrecimiento en el carrusel de CVM, primero realiza una evaluación crediticia y luego brinda mejor plan para cliente"
                     </p>
@@ -87,7 +88,7 @@
         </table>
     </div>
     <div>
-        <h2 class="tituloBox">Planes Postpago y prorrateo</h2>
+        <h2 class="tituloBox">Planes Postpago y Prorrateo</h2>
     </div>
     <div class="contenedor">
         <form action="">
@@ -250,66 +251,16 @@
                     </div>
                 </div>
             </div>
-
+            
+            <div class="selectbox" id="contrato">
+                <div class="select" style="justify-content: center;">
+                    <div class="contenido-select">
+                        <h1 class="titulo">Contrato</h1>
+                    </div>
+                </div>
+            </div>
         </form>
-
     </div>
-          
     <script src="main.js"></script>
-    
 </body>
 </html>
-
-<script type="text/javascript">
-
-    let PlanValue;
-    let CicloValue;
-
-    function setPlanValue(value) {
-        PlanValue = value;
-    }
-
-    function setCicloValue(value) {
-        CicloValue = value;
-    }
-
-    function CalcularProrrateo() {
-    PlanValue = parseFloat(PlanValue);
-    CicloValue = new Date(CicloValue);
-    CicloValue.setHours(0, 0, 0, 0);
-    var currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0);
-
-    if (!PlanValue || !CicloValue) {
-    swal("Por favor proporciona valores válidos para Plan y Ciclo");
-    return;
-    }
-        
-    CicloValue.setHours(0, 0, 0, 0);
-
-    if (PlanValue !== 20.90 && PlanValue !== 25.90){
-
-        var differenceInMilliseconds = CicloValue.getTime() - currentDate.getTime() + (24 * 60 * 60 * 1000);
-        var differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
-
-        var daysInCurrentMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
-
-        var result = (PlanValue * differenceInDays) / daysInCurrentMonth;
-    
-        result = Math.round(result * 100) / 100;
-
-        var finalResult = PlanValue + result;
-
-        finalResult = Math.round(finalResult * 100) / 100;
-
-        swal({
-        
-        title:'El saldo del prorrateo es: ' + result,
-        text: 'El total a pagar el primer mes es: ' + finalResult,
-        icon: 'success'
-    });
-    }   else {
-        swal('Para el plan '+ PlanValue + ' no aplica prorrateo.')
-        }
-    }
-</script>

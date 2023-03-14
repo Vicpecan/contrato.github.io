@@ -39,3 +39,11 @@ select1.addEventListener('click', () => {
     select1.classList.toggle('active');
     opciones1.classList.toggle('active');
 });
+
+document.getElementById('contrato').addEventListener('click', function() {
+    location.href = 'contrato.html';
+});
+
+document.querySelector('volver').addEventListener('click', function() {
+    location.href = 'index.html';
+});
