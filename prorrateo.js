@@ -17,10 +17,10 @@ function CalcularProrrateo() {
     currentDate.setHours(0, 0, 0, 0);
 
     if (!PlanValue || !CicloValue) {
-    swal("Por favor proporciona valores válidos para Plan y Ciclo");
-    return;
+        swal("Por favor proporciona valores válidos para Plan y Ciclo");
+        return;
     }
-        
+
     CicloValue.setHours(0, 0, 0, 0);
 
     if (PlanValue !== 20.90 && PlanValue !== 25.90){
@@ -28,15 +28,23 @@ function CalcularProrrateo() {
         var differenceInMilliseconds = CicloValue.getTime() - currentDate.getTime() + (24 * 60 * 60 * 1000);
         var differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
 
-        var daysInCurrentMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+        // Aquí se realiza el cambio para calcular el prorrateo dependiendo del ciclo seleccionado: 
 
-        var result = (PlanValue * differenceInDays) / daysInCurrentMonth;
-    
-        result = Math.round(result * 100) / 100;
+        let daysInMonth;  // Variable que contendrá los días del mes a calcular el prorrateo 
 
-        var finalResult = PlanValue + result;
+        if (CicloValue == 1) { // Si el ciclo es 1 entonces se toman los días del mes vigente 
+            daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();  // Se obtienen los días del mes vigente 
+        } else { // Si el ciclo es 3, 4 o 5 entonces se toman los días del mes anterior 
+            daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 0).getDate();   // Se obtienen los días del mes anterior 
+        }
 
-        finalResult = Math.round(finalResult * 100) / 100;
+        var result = (PlanValue / daysInMonth) * differenceInDays;   // Se calcula el prorrateo con base en los días obtenidos arriba 
+
+        result = Math.round(result * 100) / 100;   // Se redondea a dos decimales el resultado 
+
+        var finalResult = PlanValue + result;   // Se suma al plan el prorrateo calculado para obtener el total a pagar en primer mes 
+
+        finalResult = Math.round(finalResult * 100) / 100;   // Se redondea a dos decimales el total a pagar en primer mes 
 
         swal({
         
