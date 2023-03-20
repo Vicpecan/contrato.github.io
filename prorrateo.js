@@ -1,5 +1,6 @@
 let PlanValue;
 let CicloValue;
+var ciclo = 0;
 
 function setPlanValue(value) {
     PlanValue = value;
@@ -15,6 +16,7 @@ function CalcularProrrateo() {
     CicloValue.setHours(0, 0, 0, 0);
     var currentDate = new Date();
     currentDate.setHours(0, 0, 0, 0);
+    
 
     if (!PlanValue || !CicloValue) {
         swal("Por favor proporciona valores válidos para Plan y Ciclo");
@@ -32,10 +34,10 @@ function CalcularProrrateo() {
 
         let daysInMonth;  // Variable que contendrá los días del mes a calcular el prorrateo 
 
-        if (CicloValue == 1) { // Si el ciclo es 1 entonces se toman los días del mes vigente 
-            daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();  // Se obtienen los días del mes vigente 
+        if (ciclo == 1) { // Si el ciclo es 1 entonces se toman los días del mes vigente 
+            daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1 , 0).getDate();  // Se obtienen los días del mes vigente 
         } else { // Si el ciclo es 3, 4 o 5 entonces se toman los días del mes anterior 
-            daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 0).getDate();   // Se obtienen los días del mes anterior 
+            daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();   // Se obtienen los días del mes anterior 
         }
 
         var result = (PlanValue / daysInMonth) * differenceInDays;   // Se calcula el prorrateo con base en los días obtenidos arriba 
